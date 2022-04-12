@@ -55,3 +55,13 @@ resource "aws_route_table_association" "a" {
   route_table_id = aws_route_table.bar.id
 }
 
+# internet gateway
+
+resource "aws_internet_gateway" "gw" {
+  vpc_id = aws_vpc.main.id
+
+  tags = {
+    Name = "main"
+  }
+}
+
